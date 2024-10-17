@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const connectDB = require("./DbConnection/DBConnection");
 const registerUser = require('./controller/NewUserController');
+const LoginUserController = require('./controller/LoginUserController');
 
 app.use(cors()); 
 const port = 4000;
@@ -15,6 +16,7 @@ connectDB();
 
 
 app.post('/register', registerUser)
+app.post ('/login',LoginUserController)
 
 // Routes
 app.listen(port,() => {
