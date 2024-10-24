@@ -34,10 +34,11 @@ const jobRoutes = require('./routes/jobRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
 const resumeRoutes = require('./routes/resumeRoutes');
 const connectDB = require('./DbConnection/DBConnection')
+const cors = require('cors')
 dotenv.config();
 const app = express();
 app.use(express.json());
-
+app.use(cors())
 // Connect to MongoDB
 
 connectDB();
